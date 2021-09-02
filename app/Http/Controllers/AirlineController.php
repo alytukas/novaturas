@@ -58,13 +58,8 @@ class AirlineController extends Controller
         $airline = new Airline();
         $airline->country_id = $request->country_id;
         $airline->name = $request->name;
-        // $airport->airportCountry = $request->country_id;
-        // $airport->airportCountry = $request->airportCountry;
-        // $airline = Airline::find($request->airline->id)
         $airline->save();
         // dd($airport);
-
-        session()->flash('success', 'Nauja kategorija sukurta');
         return redirect()->route('airlines.index');
     }
 
@@ -122,15 +117,8 @@ class AirlineController extends Controller
         $airline = Airline::find($id);
         $airline->name = $request->name;
         $airline->country_id = $request->country_id;
-        // $airport->airline = $request->airline_id;
-        // $airport->airline()->attach($request->airline_id);
-
-
 
         $airline->save();
-
-
-        session()->flash('success', 'Oro uostas atnaujintas');
         return redirect()->route('airlines.index');
     }
 

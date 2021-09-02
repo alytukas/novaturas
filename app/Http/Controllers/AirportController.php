@@ -59,9 +59,7 @@ class AirportController extends Controller
         $airport = new Airport();
         $airport->country_id = $request->country_id;
         $airport->name = $request->name;
-        // $airport->airportCountry = $request->country_id;
-        // $airport->airportCountry = $request->airportCountry;
-        // $airline = Airline::find($request->airline->id)
+    
         $airport->longitude = $request->longitude;
         $airport->latitude = $request->latitude;
 
@@ -74,9 +72,6 @@ class AirportController extends Controller
                 $airport->airline()->attach($airlinesIds[$i]);
             }
         }
-        // $airport->airline()->attach($request->airline_id + 1);
-        // $airport->airline()->attach($request->airline_id);
-
         // dd($airport);
 
 
@@ -122,8 +117,7 @@ class AirportController extends Controller
         $airport = Airport::find($id);
         $airport->name = $request->name;
         $airport->country_id = $request->country_id;
-        // $airport->airline = $request->airline_id;
-        // $airport->airline()->attach($request->airline_id);
+
         $airport->longitude = $request->longitude;
         $airport->latitude = $request->latitude;
 
